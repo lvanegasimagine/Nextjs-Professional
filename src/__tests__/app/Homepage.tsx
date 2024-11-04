@@ -1,9 +1,9 @@
+import React from 'react'
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 import HomePage from '../../app/page'
 
 describe('Test Home Page', () => {
-
   it('should renders home page', () => {
     render(<HomePage />)
 
@@ -27,8 +27,10 @@ describe('Test Home Page', () => {
   it('should render just "deploy" word in home page', () => {
     render(<HomePage />)
 
-    expect(screen.getByRole('heading', {
-      name: /deploy/i
-    })).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', {
+        name: /deploy/i,
+      })
+    ).toBeInTheDocument()
   })
 })
